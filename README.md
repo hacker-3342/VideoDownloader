@@ -21,3 +21,13 @@ customtkinter==5.2.2
 
 El usuario debe tener instalado FFmpeg (https://www.gyan.dev/ffmpeg/builds/). En el caso de ser un novato en cuanto a añadir programas a el PATH de su ordenador, el siguiente 
 artículo de WikiHow explica de una forma muy clara y sencilla cómo instalar y añadir al PATH FFmpeg (https://www.wikihow.com/Install-FFmpeg-on-Windows)
+
+### Windows (único sistema operativo con una distribución)
+
+El archivo ejecutable se encuentra dentro de la carpeta "main.dist". El nombre del archivo ejecutable es main.exe. Para ejecutar el programa sólo se necesita abrir el archivo ejecutable y listo.
+
+## Feedback y errores:
+
+Si hay algún error, por favor abra una discusión aquí: (https://github.com/hacker-3342/VideoDownloader/issues). Introduzca los pasos para reproducir el error, qué estaba haciendo antes de recibir el error y si está usando la versión más reciente del programa. Los errores en versiones más antiguas **NO SE ATENDERÁN.**
+
+Si desea enviarme feedback sobre el código, por favor escriba un email a la siguiente dirección de correo electrónico: (hectoruru@outlook.es). ¡Toda ayuda se aprecia!
