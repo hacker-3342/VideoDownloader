@@ -22,6 +22,10 @@ customtkinter==5.2.2
 El usuario debe tener instalado FFmpeg (https://www.gyan.dev/ffmpeg/builds/). En el caso de ser un novato en cuanto a añadir programas a el PATH de su ordenador, el siguiente 
 artículo de WikiHow explica de una forma muy clara y sencilla cómo instalar y añadir al PATH FFmpeg (https://www.wikihow.com/Install-FFmpeg-on-Windows)
 
+Si ha añadido FFmpeg a el PATH de su sistema, pero todavía Windows no reconoce FFmpeg desde la terminal, pruebe a hacer lo siguiente:
+
+![image](https://github.com/user-attachments/assets/45b4a3f9-1796-4961-b580-89a0e3011fd2)
+
 ### Windows (único sistema operativo con una distribución)
 
 El archivo ejecutable se encuentra dentro de la carpeta "main.dist". El nombre del archivo ejecutable es main.exe. Para ejecutar el programa sólo se necesita abrir el archivo ejecutable y listo.
