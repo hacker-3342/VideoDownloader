@@ -1,6 +1,12 @@
 # Video Downloader: Versión 1.0.1
 
+![image](https://github.com/user-attachments/assets/d35b2183-d797-4146-bd84-ef9b06b60fd3)
+
 # English:
+
+IF Windows SmartScreen blocks the program, press "More information" and then "Run anyway".
+
+![image](https://github.com/user-attachments/assets/8890bb64-dff0-4783-8d38-cb20c042426c)
 
 This program coded in Python 3.12.5 allows the user to insert the URL of a video from youtube.com and create 3 files with the extension “.mp4”.
 
