@@ -1,4 +1,4 @@
-# Video Downloader: Versión 1.1.0
+# VideoDownloader Suite: Versión 1.1.0
 
 ![image](https://github.com/user-attachments/assets/a6d28209-a21c-4746-a25f-6511b4326e58)
 
