@@ -1,37 +1,16 @@
-#!/usr/bin/env python3
+#! usr/bin/env/python3
 
 from pytubefix import YouTube
 import customtkinter as ct
 import threading
+import os
 import subprocess
-import index
-import json
 
-def get_po_token_and_visitor_data():
-    """Runs index.py and captures po_token and visitor_data."""
-    result = subprocess.run(
-        ['python', 'index.py'],  # Adjust this to the correct path if necessary
-        capture_output=True,
-        text=True
-    )
-    
-    try:
-        data = json.loads(result.stdout)
-        po_token = data.get('po_token')
-        visitor_data = data.get('visitor_data')
-        return po_token, visitor_data
-    except json.JSONDecodeError:
-        print("Error: Could not decode JSON output from index.py")
-        return None, None
-
-
+print("Current working directory:", os.getcwd())
 
 app = ct.CTk()
-app.geometry("550x450")
-app.title("Youtube Video Downloader")
-
-url = ct.CTkEntry(app, placeholder_text="URL here", width=340)
-url.pack(padx=(20, 0), pady=(20, 20))
+app.geometry("650x450")
+app.title("VideoDownloader")
 
 def combine_video_audio(video_path, audio_path, output_path):
     """Combines video and audio into one file using FFmpeg."""
@@ -48,16 +27,30 @@ def start_download():
     # Select the highest quality audio-only stream
     audio_stream = yt.streams.filter(adaptive=True, file_extension='mp4', only_audio=True).order_by('abr').desc().first()
 
+    popup = None
+
     if video_stream and audio_stream:
         # Download video and audio separately
-        video_path = video_stream.download(filename="video.mp4")
-        audio_path = audio_stream.download(filename="audio.mp4")
+        while True:
+            try:
+                # Use the user-defined path
+                user_path = thepath.get()
+                video_path = video_stream.download(filename="video.mp4", output_path=user_path)
+                audio_path = audio_stream.download(filename="audio.mp4", output_path=user_path)
+                break
+            except TypeError:
+                if popup is None:
+                    popup = ct.CTkToplevel(app)
+                    badpath = ct.CTkLabel(popup, text="The path you introduced wasn't found, please try again.", width=400)
+                    badpath.pack(padx=(20, 0), pady=(20, 20))
+                app.update()
 
-        # Combine video and audio
-        output_path = "final_output.mp4"
-        combine_video_audio(video_path, audio_path, output_path)
+        # Combine video and audio using the user-defined path
+        final_output_path = os.path.join(user_path, "final_output.mp4")
+        if useffmpeg.get() == 1:
+            combine_video_audio(video_path, audio_path, final_output_path)
 
-        print(f"Download complete: {output_path}")
+        print(f"Download complete: {final_output_path}")
     else:
         print("No suitable streams found!")
 
@@ -77,7 +70,18 @@ def start():
     download_thread = threading.Thread(target=start_download)
     download_thread.start()
 
+
+url = ct.CTkEntry(app, placeholder_text="URL here", width=340)
+url.pack(padx=(20, 0), pady=(20, 20))
+
+thepath = ct.CTkEntry(app, placeholder_text="Path on which the output will be stored", width=340)
+thepath.pack(padx=(20, 0), pady=(20, 20))
+
+useffmpeg = ct.CTkSwitch(app, text="Combine video and audio (requires FFmpeg to be installed and in the system's PATH)")
+useffmpeg.pack(padx=(20, 0), pady=(20, 20))
+
 button = ct.CTkButton(app, text="Download", command=start)
 button.pack(padx=(20, 0), pady=(20, 20))
+
 
 app.mainloop()
