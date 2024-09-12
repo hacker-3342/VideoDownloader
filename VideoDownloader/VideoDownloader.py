@@ -17,12 +17,10 @@ def combine_video_audio(video_path, audio_path, output_path):
     subprocess.run(ffmpeg_command, shell=True)
 
 def start_download():
-    if user_entry_url.get().startswith("https://www.youtube.com") or user_entry_url.get().startswith("https://youtube.com"):
-        pytubefix_main_func = YouTube(user_entry_url.get(), use_po_token=True)
-    else:
-        bad_url_popup = ct.CTkToplevel(app)
-        bad_url_text = ct.CTkLabel(bad_url_popup, text="The URL you entered isn't valid, please try again.")
-        bad_url_text.pack(padx=(20, 0), pady=(20, 0))
+    pytubefix_main_func = YouTube(user_entry_url.get(), use_po_token=True)
+    bad_url_popup = ct.CTkToplevel(app)
+    bad_url_text = ct.CTkLabel(bad_url_popup, text="The URL you entered isn't valid, please try again.")
+    bad_url_text.pack(padx=(20, 0), pady=(20, 0))
         
     app.update()
 
