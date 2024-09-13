@@ -1,5 +1,11 @@
 # VideoDownloader Suite: Versión 1.1.0
 
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
+
+You should have received a copy of the GNU General Public License along with this project. If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
+
 ![image](https://github.com/user-attachments/assets/a6d28209-a21c-4746-a25f-6511b4326e58)
 
 # English:
