@@ -20,7 +20,7 @@ def start_download():
     pytubefix_main_func = YouTube(user_entry_url.get(), use_po_token=True)
     bad_url_popup = ct.CTkToplevel(app)
     bad_url_text = ct.CTkLabel(bad_url_popup, text="The URL you entered isn't valid, please try again.")
-    bad_url_text.pack(padx=(20, 0), pady=(20, 0))
+    bad_url_text.pack(padx=(10, 0), pady=(10, 0))
         
     app.update()
 
@@ -41,7 +41,7 @@ def start_download():
                 if no_path_popup is None:
                     no_path_popup = ct.CTkToplevel(app)
                     bad_path_text = ct.CTkLabel(no_path_popup, text="The path you introduced wasn't found, please try again.", width=400)
-                    bad_path_text.pack(padx=(20, 0), pady=(20, 20))
+                    bad_path_text.pack(padx=(10, 0), pady=(10, 0))
                 app.update()
 
         final_output_path = os.path.join(user_path, "final_output.mp4")
@@ -55,12 +55,12 @@ def start_download():
     theprogressbar.stop()
 
     finished_downloading = ct.CTkLabel(app, text="The download has finished successfully!", text_color="#008000")
-    finished_downloading.pack(padx=(20, 0), pady=(20, 20))
+    finished_downloading.pack(padx=(10, 0), pady=(10, 0))
 
 def start():
     global theprogressbar
     theprogressbar = ct.CTkProgressBar(app, orientation="horizontal", mode="indeterminate")
-    theprogressbar.pack(padx=(20, 0), pady=(20, 20))
+    theprogressbar.pack(padx=(10, 0), pady=(10, 0))
     theprogressbar.start()
 
     download_thread = threading.Thread(target=start_download)
@@ -68,16 +68,16 @@ def start():
 
 
 user_entry_url = ct.CTkEntry(app, placeholder_text="URL here", width=340)
-user_entry_url.pack(padx=(20, 0), pady=(20, 20))
+user_entry_url.pack(padx=(10, 0), pady=(10, 0))
 
 user_entry_path = ct.CTkEntry(app, placeholder_text="Path on which the output will be stored", width=340)
-user_entry_path.pack(padx=(20, 0), pady=(20, 20))
+user_entry_path.pack(padx=(10, 0), pady=(10, 0))
 
 user_useffmpeg = ct.CTkSwitch(app, text="Combine video and audio (requires FFmpeg to be installed and in the system's PATH)")
-user_useffmpeg.pack(padx=(20, 0), pady=(20, 20))
+user_useffmpeg.pack(padx=(15, 0), pady=(15, 0))
 
 download_start_button = ct.CTkButton(app, text="Download", command=start)
-download_start_button.pack(padx=(20, 0), pady=(20, 20))
+download_start_button.pack(padx=(20, 0), pady=(20, 0))
 
 
 app.mainloop()
