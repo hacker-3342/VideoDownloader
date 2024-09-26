@@ -5,6 +5,18 @@
 
 <h1 align="center">VideoDownloader</h1>
 
+<div align="center">
+
+![License](https://img.shields.io/github/license/hacker-3342/VideoDownloader)
+![Version](https://img.shields.io/github/v/release/hacker-3342/VideoDownloader)
+![GitHub Issues](https://img.shields.io/github/issues/hacker-3342/VideoDownloader)
+![GitHub Stars](https://img.shields.io/github/stars/hacker-3342/VideoDownloader?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/hacker-3342/VideoDownloader?style=social)
+![Contributors](https://img.shields.io/github/contributors/hacker-3342/VideoDownloader)
+![Platform](https://img.shields.io/badge/platform-windows-brightgreen)
+
+</div>
+
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 If you are interested in collaborating, please check out the VideoDownloader trello board: https://trello.com/invite/b/66f30aed55d15301b18d88ca/ATTIe726635443f96d7ed98c31a6e7850bcb742B1501/videodownloader
