@@ -9,15 +9,20 @@ app.title("VideoDownloader")
 app.geometry(f"{620}x{330}")
 
 def create_progress_bar():
-    user_download_progressbar.pack(pady=(20, 0))
+    user_download_progressbar.grid(row=0, column=4, padx=10, pady=(20, 0))
     user_download_progressbar.start()
 
 def download_video():
     url = user_url_entry.get()
     save_path = user_path_entry.get()
 
+    # Disable all buttons and entries
+    user_url_entry.configure(state="disabled")
+    user_path_entry.configure(state="disabled")
+    user_useffmpeg_switch.configure(state="disabled")
+    user_download_button.configure(state="disabled")
+
     if user_useffmpeg_switch.get() == 1:
-        # Using FFmpeg to merge video and audio
         ydl_opts = {
             'format': 'bestvideo+bestaudio/best',
             'outtmpl': f'{save_path}/%(title)s.%(ext)s',
@@ -26,7 +31,6 @@ def download_video():
             'merge_output_format': 'mp4',
         }
     else:
-        # Downloading video and audio separately, without merging
         ydl_opts = {
             'format': 'bestvideo[ext=mp4], bestaudio[ext=m4a]/best',
             'outtmpl': f'{save_path}/%(title)s.%(ext)s',
@@ -50,6 +54,16 @@ def download_video():
     user_popup.geometry("360x220")
     user_finished_download = ct.CTkLabel(user_popup, text="Download finished successfully.", text_color="#659701")
     user_finished_download.grid(row=0, column=0, padx=10, pady=10)
+
+    # Re-enable the buttons and entries using app.after() to ensure it happens in the main thread
+    app.after(0, enable_widgets)
+
+def enable_widgets():
+    user_url_entry.configure(state="normal")
+    user_path_entry.configure(state="normal")
+    user_useffmpeg_switch.configure(state="normal")
+    user_download_button.configure(state="normal")
+
 
 def start_download():
     thread_download = threading.Thread(target=download_video)
@@ -77,10 +91,10 @@ sidebar_frame.grid_rowconfigure(0, weight=1)
 
 # Input fields and UI elements
 user_url_entry = ct.CTkEntry(app, placeholder_text="YouTube URL", width=330)
-user_url_entry.grid(row=0, column=1, padx=20, pady=10, sticky="ew")
+user_url_entry.grid(row=1, column=1, padx=20, pady=10, sticky="ew")
 
 user_path_entry = ct.CTkEntry(app, placeholder_text="Path on which the video will be downloaded", width=330)
-user_path_entry.grid(row=1, column=1, padx=20, pady=10, sticky="ew")
+user_path_entry.grid(row=0, column=1, padx=20, pady=10, sticky="ew")
 
 # Label to advise of necessary FFmpeg usage
 user_ffmpeg_label = ct.CTkLabel(
