@@ -13,7 +13,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hacker-3342/VideoDownloader?style=social)
 ![GitHub Forks](https://img.shields.io/github/forks/hacker-3342/VideoDownloader?style=social)
 ![Contributors](https://img.shields.io/github/contributors/hacker-3342/VideoDownloader)
-![Platform](https://img.shields.io/badge/platform-windows-brightgreen)
+![Platform](https://img.shields.io/badge/platform-windows%20|%20macos%20|%20linux-brightgreen)
 
 </div>
 
@@ -35,19 +35,25 @@ This program coded in Python 3.12.5 allows the user to insert the URL of a video
 
 yt_dlp==2024.8.6
 customtkinter==5.2.2
+ctkmessagebox==2.7
 
 ## Installation instructions:
 
-The user must have FFmpeg (https://www.gyan.dev/ffmpeg/builds/) installed if they want to use the "Combine into a single file" feature. FFmpeg isn't needed for the rest of the program. In case you are new to adding programs to your computer's PATH, the following WikiHow article explains how to do it. 
-WikiHow article explains in a very clear and simple way how to install and add FFmpeg (https://www.wikihow.com/Install-FFmpeg-on-Windows) to the PATH.
+The user must have FFmpeg (https://www.gyan.dev/ffmpeg/builds/) installed if they want to use the "Combine into a single file" feature. FFmpeg isn't needed for the rest of the program. 
 
-If you have added FFmpeg to your system PATH, but Windows still does not recognize FFmpeg from the terminal, try doing the following:
+### Windows
 
-![image](https://github.com/user-attachments/assets/45b4a3f9-1796-4961-b580-89a0e3011fd2)
+Run the setup guided installer.
 
-### Windows (only operating system with a distribution)
+### MacOS
 
-The executable file is located inside the “VideoDownloader.dist” folder. The name of the executable file is VideoDownloader.exe. To run the program just open the executable file and you are done.
+Choose your .zip file depending on your Mac's chip architecture. x86_64 for Intel chips, ARM for M1, M2... 
+Run the .app file and you are done.
+
+### Linux
+
+Run the executable file and you are done.
+Some text and rendering may look strange, this is due to some CustomTkinter rendering issues on Linux.
 
 ## Feedback and issues:
 
