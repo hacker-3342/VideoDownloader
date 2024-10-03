@@ -1,9 +1,7 @@
 <!-- markdownlint-disable-next-line -->
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8c362492-15a1-42e9-9f03-df7f98eb431f" alt="image" />
+  <img src="https://github.com/user-attachments/assets/2f94c96e-4563-4065-afb9-dac42f0e1703" alt="image" />
 </p>
-
-<h1 align="center">VideoDownloader</h1>
 
 <div align="center">
 
