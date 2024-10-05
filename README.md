@@ -17,7 +17,7 @@
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
-If you are interested in collaborating, please check out the VideoDownloader trello board: https://trello.com/invite/b/66f30aed55d15301b18d88ca/ATTIe726635443f96d7ed98c31a6e7850bcb742B1501/videodownloader
+If you are interested in collaborating, please check out the VideoDownloader trello board: [Trello Board](https://trello.com/invite/b/66f30aed55d15301b18d88ca/ATTIe726635443f96d7ed98c31a6e7850bcb742B1501/videodownloader)
 
 You should have received a copy of the GNU General Public License along with this project. If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
 
@@ -31,9 +31,9 @@ This program coded in Python 3.12.5 allows the user to insert the URL of a video
 
 ## Libraries used:
 
-yt_dlp==2024.8.6
-customtkinter==5.2.2
-ctkmessagebox==2.7
+yt_dlp: 2024.8.6
+customtkinter: 5.2.2
+ctkmessagebox: 2.7
 
 ## Installation instructions:
 
@@ -55,6 +55,6 @@ Some text and rendering may look strange, this is due to some CustomTkinter rend
 
 ## Feedback and issues:
 
-If there are any errors, please open a discussion here: (https://github.com/hacker-3342/VideoDownloader/issues). Enter the steps to reproduce the error, what you were doing before you received the error, and if you are using the most recent version of the program. Errors in older versions **WON'T BE ATTENDED**.
+If there are any errors, please open a discussion here: (https://github.com/hacker-3342/VideoDownloader/issues). Enter the steps to reproduce the error, what you were doing before you received the error and try to provide screenshots and your code.
 
-If you would like to send me feedback on the code, please email me at the following email address: (hectoruru@outlook.es). All help is appreciated!
+If you would like to send me feedback on the code, please email me at the following email address: (hectoruru@outlook.es) or start a discussion. All help is appreciated!
