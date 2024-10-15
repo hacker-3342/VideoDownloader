@@ -29,33 +29,63 @@ If Windows SmartScreen blocks the program, press "More information" and then "Ru
 
 ![image](https://github.com/user-attachments/assets/8890bb64-dff0-4783-8d38-cb20c042426c)
 
-This program coded in Python 3.12.5 allows the user to insert the URL of a video from youtube.com and create an mp4 file and an m4a file (video and audio).
+This program coded in Python 3 allows the user to insert the URL of a video from youtube.com and create an mp4 file and an m4a file (video and audio).
 
 *The mp4 file will only have both video and audio if the "Use ffmpeg" switch is toggled and FFmpeg is installed.
 
 ## Libraries used:
 
-yt_dlp: 2024.8.6
-customtkinter: 5.2.2
-ctkmessagebox: 2.7
+All libraries used are in the 'requirements.txt' file.
 
 ## Installation instructions:
 
 The user must have FFmpeg (https://www.gyan.dev/ffmpeg/builds/) installed if they want to use the "Combine into a single file" feature. FFmpeg isn't needed for the rest of the program. 
 
-### Windows
+### Binaries:
+
+#### Windows
 
 Run the setup guided installer.
+There will be a portable version in the future.
 
-### MacOS
+#### MacOS
 
 Choose your .zip file depending on your Mac's chip architecture. x86_64 for Intel chips, ARM for M1, M2... 
 Run the .app file and you are done.
 
-### Linux
+#### Linux
 
 Run the executable file and you are done.
 Some text and rendering may look strange, this is due to some CustomTkinter rendering issues on Linux.
+
+Warning:
+The Wayland compositor could have issues rendering GUI apps in Python. Using X11 is recommended, but if Wayland is your only option, go ahead and try it.
+
+### Source code
+
+Download the source code.
+Create a virtual environment (not necessary, but recommended):
+```
+python3 -m venv <your environment name here>
+```
+Activate the virtual environment:
+
+Windows:
+```
+& <environment name>/Scripts/activate.ps1
+```
+MacOS and Linux:
+```
+source <environment name>/bin/activate
+```
+Install the requirements:
+```
+pip install -r requirements.txt
+```
+Run the VideoDownloader.py file:
+```
+python3 VideoDownloader.py
+```
 
 ## Feedback and issues:
 
